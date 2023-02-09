@@ -1,0 +1,2 @@
+# bwamern
+ Latihan Fullstack Javascript
