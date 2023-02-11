@@ -1,7 +1,7 @@
 import React from 'react'
 import {render} from '@testing-library/react'
+import {BrowserRouter as Router, } from 'react-router-dom'
 import Button from './index'
-import { BrowserRouter as Router } from "react-router-dom";
 
 test("test button disabled", () => {
     const {container} = render(<Button isDisabled></Button>);
@@ -10,8 +10,8 @@ test("test button disabled", () => {
 
 test("test button loading", () => {
     const {container, getByText} = render(<Button isLoading></Button>);
-
-    expect(getByText(/loading/i)).toBeInTheDocument();
+    // getByText(/loading/i);
+    expect(getByText(/loading/i));
     expect(container.querySelector("span")).toBeInTheDocument();
 });
 
@@ -21,11 +21,6 @@ test("test button a href", () => {
 });
 
 test("test button link", () => {
-    const {container} = render(
-        <Router>
-            <Button href='' type='link'></Button>
-        </Router>
-    );
+    const {container} = render(<Router><Button href='' type='link'></Button></Router>);
     expect(container.querySelector("a")).toBeInTheDocument();
 });
-
